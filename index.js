@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const fs = require('fs');
 const crypto = require('crypto');
+const moment = require('moment'); // مكتبة للتعامل مع التواريخ بشكل مرن
 
 const LICENSE_FILE_PATH = 'license.txt'; // ملف الترخيص
 const PUBLIC_KEY_PATH = 'publicKey.pem'; // ملف المفتاح العام
 const EXPECTED_COMPANY_NAME = 'halabi'; // اسم الترخيص
+const CHECK_INTERVAL = 10 * 60 * 1000; // تحقق كل 10 دقائق
 
 const VACATION_ROLE_ID = '1237126800052588655'; // معرف دور الإجازة
 
